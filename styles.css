@@ -1,0 +1,200 @@
+:root {
+  --DesaturatedRed: hsl(0, 36%, 70%);
+  --SoftRed: hsl(0, 93%, 68%);
+  --DarkGrayishRed: hsl(0, 6%, 24%);
+  --One: hsl(0, 0%, 100%);
+  --Two: hsl(0, 100%, 98%);
+  --Three: hsl(0, 80%, 86%);
+  --Four: hsl(0, 74%, 74%);
+
+  --input-radius: 20px;
+  --input-height: 3rem;
+
+  font-size: 16px;
+  font-family: "Josefin Sans";
+  color: VAR(--DesaturatedRed);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+}
+
+header {
+  justify-self: start;
+  align-self: flex-start;
+  position: absolute;
+  top: 0;
+}
+
+header > figure {
+  margin: 20px 0 20px 0;
+}
+
+header > figure > img {
+  height: 25px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 550px;
+}
+
+h1 {
+  font-size: 46px;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 20px;
+}
+
+h1 > span {
+  color: var(--DesaturatedRed);
+}
+
+article > p {
+  font-weight: 300;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--input-height) + 6px);
+  margin-bottom: 10px;
+}
+
+.input-email {
+  display: flex;
+  align-content: center;
+  height: var(--input-height);
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--input-radius);
+  border: 1px solid var(--DesaturatedRed);
+}
+
+input {
+  border: none;
+  width: 75%;
+  height: calc(var(--input-height)-2px);
+  margin-left: 20px;
+  padding: 0;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+input::placeholder {
+  font-size: 14px;
+  color: var(--DesaturatedRed);
+}
+
+.error-icon {
+  display: none;
+  align-items: center;
+  justify-content: start;
+  margin-right: 30px;
+  margin-left: -20px;
+}
+
+button {
+  background-color: var(--Four);
+  margin-left: -45px;
+  width: 80px;
+  height: calc(var(--input-height) + 6px);
+  border-radius: var(--input-radius);
+  border: 2px solid var(--DesaturatedRed);
+}
+
+button:hover {
+  background-color: var(--Three);
+}
+
+section > span {
+  display: none;
+  align-self: center;
+  color: var(--SoftRed);
+  font-size: 14px;
+}
+
+.unhide {
+  display: inline;
+}
+
+.unhide-icon {
+  display: flex;
+}
+
+.error-border {
+  border: 2px solid var(--SoftRed);
+}
+
+@media only screen and (min-width: 968px) {
+  #main-image {
+    content: url("images/hero-desktop.jpg");
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+  }
+
+  body {
+    flex-direction: row-reverse;
+    position: relative;
+    margin: 0;
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+  }
+
+  body > figure {
+    margin: 0;
+    height: 100vh;
+    width: 800px;
+    justify-self: flex-end;
+  }
+  main {
+    height: 90%;
+    width: 60%;
+  }
+
+  h1 {
+    font-size: 66px;
+    letter-spacing: 14px;
+  }
+
+  article {
+    text-align: left;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
