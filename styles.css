@@ -25,6 +25,18 @@ body {
   max-width: 100%;
   position: relative;
   overflow: hidden;
+  margin: 0;
+}
+
+body>figure{
+  margin-bottom: 60px;
+  width: 375px;
+}
+
+body > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 main {
@@ -32,7 +44,9 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 90%;
+  /* max-width: 90%; */
+  max-width: 550px;
+  margin: 0 20px 10px 20px
 }
 
 header {
@@ -56,7 +70,7 @@ article {
   justify-content: center;
   align-items: center;
   text-align: center;
-  max-width: 550px;
+  
 }
 
 h1 {
@@ -83,7 +97,7 @@ section {
   height: fit-content;
 }
 
-.input-area {
+form{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,7 +144,7 @@ input::placeholder {
 button {
   background-color: var(--Four);
   margin-left: -45px;
-  width: 80px;
+  width: 100px;
   height: calc(var(--input-height) + 6px);
   border-radius: var(--input-radius);
   border: 2px solid var(--DesaturatedRed);
@@ -159,7 +173,14 @@ section > span {
   border: 2px solid var(--SoftRed);
 }
 
-@media only screen and (min-width: 968px) {
+@media only screen and (min-width: 575px) {
+  body>figure{
+
+    width: 575px;
+  }}
+
+
+@media only screen and (min-width: 1200px) {
   #main-image {
     content: url("images/hero-desktop.jpg");
     width: 100%;
@@ -178,13 +199,22 @@ section > span {
 
   body > figure {
     margin: 0;
-    height: 100vh;
-    width: 800px;
-    justify-self: flex-end;
+    height: 100vh; 
+    width: 45%;
+    margin-left: auto;
+    min-width: 565px;
+  }
+
+  #main-image{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    ;
   }
   main {
     height: 90%;
-    width: 60%;
+    width: 70%;
+    margin-left: 150px;
   }
 
   h1 {
@@ -194,7 +224,20 @@ section > span {
 
   article {
     text-align: left;
-    margin-left: 60px;
+    
     margin-right: 60px;
+  }
+
+  article > p {
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  header{
+    margin-top: 80px;
+  }
+
+  header > figure > img{
+    height: unset;
   }
 }

@@ -6,15 +6,20 @@ document.addEventListener("DOMContentLoaded", function (){
     const emailDiv = document.getElementsByClassName('input-email')[0];
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 
-    btn.addEventListener('click', function(){
+    btn.addEventListener('click', function(e){
+        e.preventDefault();
         if (inpt.value.match(emailRegex)){
+            console.log('matches')
             inpt.value="";
+            errorMessage.classList.remove('unhide');
+            errorIcon.classList.remove('unhide-icon');
+            emailDiv.classList.remove('error-border')
         } else {
+            console.log('no match')
             errorMessage.classList.add('unhide');
             errorIcon.classList.add('unhide-icon');
             emailDiv.classList.add('error-border')
         }
-
     })
 
 
